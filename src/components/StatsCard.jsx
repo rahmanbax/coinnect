@@ -4,7 +4,7 @@ import React from "react";
 const StatsCard = (props) => {
   const { title, value, change } = props;
   return (
-    <div className="p-6 bg-white rounded-3xl">
+    <div className="p-6 bg-white rounded-xl">
       <p className="text-black/60">{title}</p>
       <div className="mt-2 flex items-center gap-3">
         <h2 className="text-xl font-bold">{value}</h2>
