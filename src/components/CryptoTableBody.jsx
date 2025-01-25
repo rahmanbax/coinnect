@@ -23,12 +23,12 @@ const CryptoTableBody = (props) => {
         <p>{name}</p>
         <span className="text-black/60 text-sm">{symbol}</span>
       </div>
-      <div className="p-5 w-[116px] text-end">{priceChange1h}</div>
-      <div className="p-5 w-[116px] text-end">{priceChange1d}</div>
-      <div className="p-5 w-[116px] text-end">{priceChange1w}</div>
-      <div className="p-5 w-[160px] text-end">{price}</div>
-      <div className="p-5 w-[132px] text-end">{marketCap}</div>
-      <div className="p-5 w-[148px] text-end">{volume}</div>
+      <div className="p-5 w-[116px] text-end">{priceChange1h}%</div>
+      <div className="p-5 w-[116px] text-end">{priceChange1d}%</div>
+      <div className="p-5 w-[116px] text-end">{priceChange1w}%</div>
+      <div className="p-5 w-[160px] text-end">${price}</div>
+      <div className="p-5 w-[132px] text-end">${marketCap}</div>
+      <div className="p-5 w-[148px] text-end">${volume}</div>
     </div>
   );
 };
