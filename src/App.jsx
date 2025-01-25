@@ -5,7 +5,7 @@ function App() {
     <>
       <div className="justify-center flex flex-col min-h-screen items-center">
         <h1>Test2</h1>
-        <ButtonPrimary label="Sign Up"/>
+        <ButtonPrimary>Sign Up</ButtonPrimary>
       </div>
     </>
   );
