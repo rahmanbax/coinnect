@@ -20,9 +20,9 @@ const MarketsPage = () => {
               of 55.3%.
             </p>
             <div className="grid grid-cols-3 gap-4 mt-12">
-                <StatsCard title="Market Cap" value="$3,712,067,671,731" change="3.04%" />
-                <StatsCard title="Volume 24h" value="$3,712,067,671,731" change="3.04%" />
-                <StatsCard title="BTC Dominance" value="$3,712,067,671,731" change="3.04%" />
+                <StatsCard title="Market Cap" value="$3,712,067,671,731" change={0} />
+                <StatsCard title="Volume 24h" value="$3,712,067,671,731" change={-3.04} />
+                <StatsCard title="BTC Dominance" value="$3,712,067,671,731" change={3.04} />
             </div>
           </section>
         </main>
