@@ -1,5 +1,5 @@
-@import "tailwindcss";
 @import url("https://fonts.cdnfonts.com/css/sora-3");
+@import "tailwindcss";
 
 @theme {
     --default-font-family: 'Sora', sans-serif;
