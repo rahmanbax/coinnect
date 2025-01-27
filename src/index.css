@@ -3,6 +3,8 @@
 
 @theme {
     --default-font-family: "Sora", serif;
+    --color-honey: #FFC31B;
+    --color-honey-hover: #E5AF18;
 }
 
 html {
