@@ -16,10 +16,10 @@ const CryptoTableBody = (props) => {
     volume,
   } = props;
   return (
-    <div className="bg-white flex text-base items-center border-t-1 border-[#f5f5f5]">
+    <div className="bg-white hover:bg-gray-50 flex text-base items-center border-t-1 border-[#f5f5f5] transition ease-out">
       <div className="text-center w-[59px] p-5">{index}</div>
       <div className="text-center w-20 p-5">
-        <img src={icon} alt={symbol} className="w-10 h-10" />
+        <img src={icon} alt={symbol} className="w-10 h-10 rounded-full" />
       </div>
       <div className="p-5 flex-1 flex flex-col gap-1">
         <p>{name}</p>
