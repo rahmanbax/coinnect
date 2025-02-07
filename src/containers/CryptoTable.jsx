@@ -3,30 +3,15 @@ import CryptoTableHeader from "../components/CryptoTableHeader";
 import CryptoTableBody from "../components/CryptoTableBody";
 import Pagination from "../components/Pagination";
 import { getCoins } from "../services/product.service";
-
-function formatNumberSeparatedWithComma(value) {
-  return value.toLocaleString("en-US", {
-    minimumFractionDigits: 2,
-    maximumFractionDigits: 2,
-  });
-}
-
-function formatNumberToString(value) {
-  if (value >= 1e12) {
-    return `${(value / 1e12).toFixed(0)}T`; // Format triliun
-  } else if (value >= 1e9) {
-    return `${(value / 1e9).toFixed(0)}B`; // Format miliar
-  } else if (value >= 1e6) {
-    return `${(value / 1e6).toFixed(0)}M`; // Format juta
-  } else {
-    return value.toLocaleString(); // Format biasa dengan koma
-  }
-}
+import { useSearchParams } from "react-router-dom";
+import { formatNumberSeparatedWithComma, formatNumberToString } from "../utils/formatNumber";
 
 const CryptoTable = () => {
+  const [searchParams] = useSearchParams();
+  const page = Number(searchParams.get("page")) || 1; // Ambil page dari URL
+  const limit = Number(searchParams.get("limit")) || 10; // Default limit 10
+
   const [coins, setCoins] = useState([]);
-  const [page, setPage] = useState(1);
-  const [limit, setLimit] = useState(10);
   const [loading, setLoading] = useState(false);
   const [totalPages, setTotalPages] = useState();
 
@@ -39,7 +24,7 @@ const CryptoTable = () => {
             setCoins(data.result);
             setTotalPages(Math.min(data.meta.pageCount, 50));
           },
-          page,
+          page, // Pastikan menggunakan page dari URL
           limit
         );
       } catch (error) {
@@ -50,30 +35,34 @@ const CryptoTable = () => {
     };
 
     fetchData();
-  }, [page, limit]);
+  }, [page, limit]); // Re-fetch data ketika page atau limit berubah
 
   return (
-    <section className="mt-16 w-full ">
+    <section className="mt-16 w-full">
       <div className="rounded-xl overflow-hidden">
         <CryptoTableHeader />
-        {coins.map((coin) => (
-          <CryptoTableBody
-            key={coin.symbol}
-            index={coin.rank}
-            name={coin.name}
-            icon={coin.icon}
-            symbol={coin.symbol}
-            priceChange1h={coin.priceChange1h}
-            priceChange1d={coin.priceChange1d}
-            priceChange1w={coin.priceChange1w}
-            price={formatNumberSeparatedWithComma(coin.price)}
-            marketCap={formatNumberToString(coin.marketCap)}
-            volume={formatNumberToString(coin.volume)}
-          />
-        ))}
+        {loading ? (
+          <p className="text-center py-5">Loading...</p>
+        ) : (
+          coins.map((coin) => (
+            <CryptoTableBody
+              key={coin.symbol}
+              index={coin.rank}
+              name={coin.name}
+              icon={coin.icon}
+              symbol={coin.symbol}
+              priceChange1h={coin.priceChange1h}
+              priceChange1d={coin.priceChange1d}
+              priceChange1w={coin.priceChange1w}
+              price={formatNumberSeparatedWithComma(coin.price)}
+              marketCap={formatNumberToString(coin.marketCap)}
+              volume={formatNumberToString(coin.volume)}
+            />
+          ))
+        )}
       </div>
 
-      <Pagination page={page} lastPage={totalPages} setPage={setPage} />
+      <Pagination lastPage={totalPages} />
     </section>
   );
 };
