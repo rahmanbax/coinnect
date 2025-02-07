@@ -6,7 +6,7 @@ const StatsCard = (props) => {
   return (
     <div className="p-6 bg-white rounded-xl">
       <p className="text-black/60">{title}</p>
-      <div className="mt-2 flex items-center gap-3">
+      <div className="mt-2 flex flex-wrap gap-y-2 items-center gap-3">
         <h2 className="text-xl font-bold">{value}</h2>
         {change < 0 ? (
           <div className="p-1 bg-red-100 flex rounded-sm items-center">
