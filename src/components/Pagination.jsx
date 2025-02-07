@@ -11,7 +11,7 @@ const Pagination = ({ page, lastPage, setPage }) => {
 
   const generatePages = () => {
     const pages = new Set();
-    const range = 2; // Menampilkan 2 halaman sebelum dan sesudah currentPage
+    const range = 2; 
 
     pages.add(1);
     
@@ -39,7 +39,7 @@ const Pagination = ({ page, lastPage, setPage }) => {
       {page > 1 && (
         <button
           onClick={handlePrevPage}
-          className="px-4 bg-white h-10 hover:bg-gray-100 rounded-xl text-sm transition ease-out"
+          className="px-4 bg-white h-10 hover:bg-gray-100 rounded-xl text-sm transition ease-out cursor-pointer"
         >
           Prev
         </button>
@@ -57,7 +57,7 @@ const Pagination = ({ page, lastPage, setPage }) => {
           <button
             key={index}
             onClick={() => setPage(p)}
-            className={`w-10 h-10 flex items-center justify-center rounded-full text-sm transition-colors ease-out text-black ${p === page ? 'bg-honey/20  border-2 border-honey' : 'bg-white hover:bg-honey/20'}`}
+            className={`w-10 h-10 flex items-center justify-center rounded-full text-sm transition-colors ease-out text-black ${p === page ? 'bg-honey/20  border-2 border-honey' : 'bg-white hover:bg-honey/20 cursor-pointer'}`}
           >
             {p}
           </button>
@@ -67,7 +67,7 @@ const Pagination = ({ page, lastPage, setPage }) => {
       {page < lastPage && (
         <button
           onClick={handleNextPage}
-          className="px-4 bg-white h-10 hover:bg-gray-100 rounded-xl text-sm transition-all ease-out"
+          className="px-4 bg-white h-10 hover:bg-gray-100 rounded-xl text-sm transition-all ease-out cursor-pointer"
         >
           Next
         </button>
