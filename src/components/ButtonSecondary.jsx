@@ -1,9 +1,9 @@
 import React from 'react';
 
-const ButtonSecondary = (props) => {
+const ButtonSecondary = ({ children, onClick }) => {
     return (
-        <button className="rounded-xl bg-white text-black text-sm font-medium py-2 px-4">
-            {props.children}
+        <button onClick={onClick} className="rounded-xl bg-white hover:bg-gray-100 text-black text-sm font-medium py-2 px-4 transition ease-out">
+            {children}
         </button>
     );
 };
