@@ -6,8 +6,10 @@ const ErrorPage = () => {
   return (
     <div>
       <NavBar />
-      <p>Something went wrong</p>
-      <p>{error.message}</p>
+      <div className="flex flex-col items-center gap-2 justify-center">
+        <p>Something went wrong</p>
+        <p>{error.message}</p>
+      </div>
     </div>
   );
 };
