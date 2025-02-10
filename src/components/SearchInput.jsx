@@ -8,7 +8,7 @@ const SearchInput = forwardRef(
   ({ setSearchResults, setSearchInputGlobal }, ref) => {
     const { debounce } = useDebounce();
     const [searchInput, setSearchInput] = useState("");
-    const DELAY = 800;
+    const DELAY = 600;
 
     const fetchData = async () => {
       if (searchInput.trim() === "") {
