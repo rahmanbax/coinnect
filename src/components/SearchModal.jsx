@@ -18,8 +18,12 @@ const SearchModalLayout = forwardRef(({ searchInputRef }, ref) => {
       <div className="p-5 bg-white border-t-1 border-[#f5f5f5] max-h-[600px] overflow-y-auto">
         {searchInput.trim() === "" ? (
           <TrendingNowLayout /> // Jika input kosong, tampilkan TrendingNowLayout
+        ) : searchResults.length > 0 ? (
+          <SearchResultsLayout searchData={searchResults} />
         ) : (
-          <SearchResultsLayout searchData={searchResults} /> // Jika ada pencarian, tampilkan hasil
+          <div className="flex justify-center text-gray-600">
+            We can't find coin you looking for
+          </div>
         )}
       </div>
     </div>
