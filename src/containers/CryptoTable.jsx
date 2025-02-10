@@ -8,8 +8,8 @@ import { formatNumberSeparatedWithComma, formatNumberToString } from "../utils/f
 
 const CryptoTable = () => {
   const [searchParams] = useSearchParams();
-  const page = Number(searchParams.get("page")) || 1; // Ambil page dari URL
-  const limit = Number(searchParams.get("limit")) || 10; // Default limit 10
+  const page = Number(searchParams.get("page")) || 1; 
+  const limit = 10; 
 
   const [coins, setCoins] = useState([]);
   const [loading, setLoading] = useState(false);
