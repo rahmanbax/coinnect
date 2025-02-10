@@ -1,9 +1,12 @@
 import { MagnifyingGlass } from "@phosphor-icons/react";
 import React from "react";
 
-const SearchBar = () => {
+const SearchBar = ({ onClick }) => {
   return (
-    <button className="flex items-center gap-1 px-2 py-1 bg-[#F5F5F5] rounded-full stroke-1 border-1 border-gray-200">
+    <button
+      onClick={onClick}
+      className="flex items-center gap-1 px-2 py-1 bg-[#F5F5F5] rounded-full stroke-1 border-1 border-gray-200"
+    >
       <MagnifyingGlass className="opacity-50" size={12} weight="bold" />
       <p className="font-normal text-sm text-gray-500">Search</p>
     </button>
