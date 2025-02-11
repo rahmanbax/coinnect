@@ -6,7 +6,8 @@ import IndexPage from "./pages/IndexPage.jsx";
 import MarketsPage from "./pages/MarketsPage.jsx";
 import SwapPage from "./pages/SwapPage.jsx";
 import PortfolioTracker from "./pages/PortfolioTracker.jsx";
-import ErrorPage from "./pages/404.jsx";
+import NotFoundPage from "./pages/404.jsx";
+import ErrorPage from "./pages/ErrorPage.jsx";
 
 const router = createBrowserRouter([
   {
@@ -25,6 +26,10 @@ const router = createBrowserRouter([
   {
     path: "/tracker",
     element: <PortfolioTracker />,
+  },
+  {
+    path: "*",
+    element: <NotFoundPage />,
   },
 ]);
 
