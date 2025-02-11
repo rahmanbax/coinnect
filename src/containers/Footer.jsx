@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <footer className="w-full bg-[#F0F0F0] py-16">
+    <footer className="w-full bg-[#F0F0F0] py-10">
       <div className="flex w-[1328px] justify-between mx-auto">
         <div className="w-[450px]">
           <Link to="/"><img src={coinnect} alt="" className="h-[30px]" /></Link>
@@ -35,29 +35,29 @@ const Footer = () => {
           <div className="flex flex-col gap-4 w-33">
             <p className="font-semibold">Features</p>
             <Link to={"/markets"} className="">Markets</Link>
-            <Link to={"/swap"} className="">Swap</Link>
-            <Link to={"/tracker"} className="">Portfolio Tracker</Link>
+            <p className="cursor-not-allowed">Swap</p>
+            <p className="cursor-not-allowed">Portfolio Tracker</p>
           </div>
           <div className="flex flex-col gap-4 w-33">
             <p className="font-semibold">Information</p>
-            <Link className="">Airdrop</Link>
-            <Link className="">News</Link>
-            <Link className="">Blog</Link>
+            <p className="cursor-not-allowed">Airdrop</p>
+            <p className="cursor-not-allowed">News</p>
+            <p className="cursor-not-allowed">Blog</p>
           </div>
           <div className="flex flex-col gap-4 w-33">
             <p className="font-semibold">Policies</p>
-            <Link className="">Terms of Use</Link>
-            <Link className="">Privacy Policy</Link>
+            <p className="cursor-not-allowed">Terms of Use</p>
+            <p className="cursor-not-allowed">Privacy Policy</p>
           </div>
           <div className="flex flex-col gap-4 w-33">
             <p className="font-semibold">Features</p>
-            <Link className="">Help Center</Link>
-            <Link className="">FAQ</Link>
+            <p className="cursor-not-allowed">Help Center</p>
+            <p className="cursor-not-allowed">FAQ</p>
           </div>
           <div className="flex flex-col gap-4 w-33">
             <p className="font-semibold">Company</p>
-            <Link className="">About</Link>
-            <Link className="">Career</Link>
+            <p className="cursor-not-allowed">About</p>
+            <p className="cursor-not-allowed">Career</p>
           </div>
         </div>
       </div>
