@@ -2,7 +2,7 @@ import React from "react";
 import { formatNumberSeparatedWithComma } from "../utils/formatNumber";
 import PriceChange from "./PriceChange";
 
-const SearchResultsCard = ({ data }) => {
+const CoinCard = ({ data }) => {
   return (
     <div className="flex justify-between items-center p-3 mt-3 hover:bg-[#f5f5f5] transition ease-out rounded-xl">
       <div className="flex gap-3 items-center">
@@ -22,4 +22,4 @@ const SearchResultsCard = ({ data }) => {
   );
 };
 
-export default SearchResultsCard;
+export default CoinCard;
