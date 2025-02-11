@@ -4,7 +4,7 @@ import SearchResultsLayout from "./SearchResults";
 import TrendingNowLayout from "./TrendingNow";
 import SearchInput from "./SearchInput";
 
-const SearchModalLayout = forwardRef(({ searchInputRef }, ref) => {
+const SearchModalLayout = forwardRef(({ searchInputRef }) => {
   const [searchResults, setSearchResults] = useState([]);
   const [searchInput, setSearchInput] = useState("");
 
