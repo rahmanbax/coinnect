@@ -16,7 +16,7 @@ const CoinCard = ({ data }) => {
         <p className="font-semibold text-base">
           ${formatNumberSeparatedWithComma(data.price)}
         </p>
-        <PriceChange priceChange={data.priceChange1h} textSizeBase={false} />
+        <PriceChange priceChange={data.priceChange1d} textSizeBase={false} />
       </div>
     </div>
   );
