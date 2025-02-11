@@ -45,7 +45,7 @@ export const getCoinsBySearch = (searchQuery, callback) => {
         accept: "application/json",
       },
       params: {
-        limit: 100,
+        limit: 1000,
       },
     })
     .then((res) => {
@@ -70,13 +70,14 @@ export const getCoinsTrend = (callback) => {
       },
       params: {
         limit: 5,
-        "priceChange1d~greaterThan": 3,
-        "volume~greaterThan":1000000,
-        "marketCap~greaterThan":10000000,
+        "priceChange1d~greaterThan": 10,
+        "volume~greaterThan": 1000000,
+        "marketCap~greaterThan": 10000000,
+        "sortyBy": "volume"
       },
     })
     .then((res) => {
-      callback(res.data);
+      callback(res.data.result);
     })
     .catch((error) => {
       console.log(error);
