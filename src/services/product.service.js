@@ -60,3 +60,25 @@ export const getCoinsBySearch = (searchQuery, callback) => {
       console.log(error);
     });
 };
+
+export const getCoinsTrend = (callback) => {
+  axios
+    .get("https://openapiv1.coinstats.app/coins", {
+      headers: {
+        "X-API-KEY": "0TP5VglKG9meuQngisyWgPb3wLrQJIcVMHQgKOjV+Ps=",
+        accept: "application/json",
+      },
+      params: {
+        limit: 5,
+        "priceChange1d~greaterThan": 3,
+        "volume~greaterThan":1000000,
+        "marketCap~greaterThan":10000000,
+      },
+    })
+    .then((res) => {
+      callback(res.data);
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+};
