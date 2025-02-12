@@ -5,7 +5,7 @@ import { getCoinsBySearch } from "../services/product.service";
 import useDebounce from "../hooks/useDebounce";
 
 const SearchInput = forwardRef(
-  ({ setSearchResults, setSearchInputGlobal }, ref) => {
+  ({ setSearchResults, setSearchInputGlobal, closeButton }, ref) => {
     const { debounce } = useDebounce();
     const [searchInput, setSearchInput] = useState("");
     const DELAY = 600;
@@ -58,6 +58,12 @@ const SearchInput = forwardRef(
             setSearchInput(e.target.value);
           }}
         />
+        <button
+          onClick={closeButton}
+          className="text-xs text-black/60 p-1 bg-gray-50 hover:shadow-sm cursor-pointer border border-gray-200 rounded-lg"
+        >
+          close
+        </button>
       </div>
     );
   }
