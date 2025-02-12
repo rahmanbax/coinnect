@@ -1,7 +1,6 @@
 import React from "react";
 
 const Modal = ({ open, onClose, children, searchModal = false }) => {
-  
   if (!open) return null;
 
   return (
@@ -15,7 +14,11 @@ const Modal = ({ open, onClose, children, searchModal = false }) => {
     >
       <div
         onClick={(e) => e.stopPropagation()}
-        className={`${searchModal ? "absolute top-40" : "relative"}`}
+        className={`${
+          searchModal
+            ? "absolute top-5 md:top-10 lg:top-20 w-full md:w-[656px]"
+            : "relative"
+        } `}
       >
         {children}
       </div>
