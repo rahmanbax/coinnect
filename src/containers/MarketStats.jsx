@@ -31,10 +31,10 @@ const MarketStats = () => {
     <>
       <section className="mx-5 mt-5 md:mt-10 md:mx-10 lg:mx-auto lg:mt-16 lg:w-[984px]">
         <div className="flex flex-col items-center gap-4">
-          <h1 className="font-bold text-2xl md:text-3xl">
+          <h1 className="font-bold text-xl md:text-3xl text-center">
             Today's Crypto Market Cap
           </h1>
-          <p className="text-center text-black/60">
+          <p className="text-center text-sm md:text-base text-black/60">
             The global cryptocurrency market cap today is currently valued at
             approximately ${formatNumberToString(marketData.marketCap)},
             reflecting a {marketData.marketCapChange}% change in the past 24
