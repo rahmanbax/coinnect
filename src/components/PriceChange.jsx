@@ -11,10 +11,10 @@ const PriceChange = (props) => {
     <>
       {priceChange < 0 ? (
         <div className="flex items-center place-content-end">
-          <CaretDown size={16} weight="fill" className="text-red-600" />
+          <CaretDown size={textSizeBase ? 16 : 14} weight="fill" className="text-red-600" />
           <p
-            className={`${
-              textSizeBase ? "text-base" : "text-sm"
+            className={`text-sm md:text-base ${
+              textSizeBase ? "text-base" : "text-xs md:text-sm"
             } text-red-600 font-medium`}
           >
             {absolutePriceChange}%
@@ -23,8 +23,8 @@ const PriceChange = (props) => {
       ) : priceChange === 0 ? (
         <div className="text-end">
           <p
-            className={`${
-              textSizeBase ? "text-base" : "text-sm"
+            className={`text-sm md:text-base ${
+              textSizeBase ? "text-base" : "text-xs md:text-sm"
             } text-gray-600 font-medium`}
           >
             {absolutePriceChange}%
@@ -32,10 +32,10 @@ const PriceChange = (props) => {
         </div>
       ) : (
         <div className="flex items-center place-content-end">
-          <CaretUp size={16} weight="fill" className="text-green-600" />
+          <CaretUp size={textSizeBase ? 16 : 14} weight="fill" className="text-green-600" />
           <p
-            className={`${
-              textSizeBase ? "text-base" : "text-sm"
+            className={`text-sm md:text-base ${
+              textSizeBase ? "text-base" : "text-xs md:text-sm"
             } text-green-600 font-medium`}
           >
             {absolutePriceChange}%
