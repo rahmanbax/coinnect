@@ -21,6 +21,14 @@ const NavBar = () => {
     }
   }, [open]);
 
+  useEffect(() => {
+    if (openNavBar) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+  }, [openNavBar]);
+
   return (
     <>
       <header className="bg-white py-4">

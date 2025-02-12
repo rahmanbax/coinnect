@@ -8,7 +8,7 @@ const NavBarMobile = ({ open, onClose }) => {
 
   return (
     <div
-      className={`absolute size-full ${
+      className={`absolute top-0 size-full ${
         open ? "visible bg-white backdrop-blur-xs" : "invisible"
       }
       
