@@ -14,21 +14,22 @@ const CryptoTableBody = ({ coinData }) => {
         />
       </div>
       <div className="p-5 flex-1 flex flex-col gap-1">
-        <p>{coinData.name}</p>
-        <span className="text-black/60 text-sm">{coinData.symbol}</span>
+        <p className="w-full">{coinData.name}</p>
+        <span className="text-black/60 hidden md:block text-sm">{coinData.symbol}</span>
+        <span className="text-black/80 md:hidden text-sm">${formatNumberSeparatedWithComma(coinData.price)}</span>
       </div>
-      <div className="p-5 w-[116px]">
+      <div className="p-5 w-[116px] hidden xl:block ">
         <PriceChange priceChange={coinData.priceChange1h} />
       </div>
       <div className="p-5 w-[116px]">
         <PriceChange priceChange={coinData.priceChange1d} />
       </div>
-      <div className="p-5 w-[116px]">
+      <div className="p-5 w-[116px] hidden lg:block ">
         <PriceChange priceChange={coinData.priceChange1w} />
       </div>
-      <div className="p-5 w-[160px] text-end">${formatNumberSeparatedWithComma(coinData.price)}</div>
-      <div className="p-5 w-[132px] text-end">${formatNumberToString(coinData.marketCap)}</div>
-      <div className="p-5 w-[148px] text-end">${formatNumberToString(coinData.volume)}</div>
+      <div className="p-5 w-[160px] hidden md:block text-end">${formatNumberSeparatedWithComma(coinData.price)}</div>
+      <div className="p-5 w-[132px] hidden xl:block text-end">${formatNumberToString(coinData.marketCap)}</div>
+      <div className="p-5 w-[148px] hidden lg:block text-end">${formatNumberToString(coinData.volume)}</div>
     </div>
   );
 };
