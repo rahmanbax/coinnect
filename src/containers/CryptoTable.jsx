@@ -37,7 +37,7 @@ const CryptoTable = () => {
   }, [page, limit]); // Re-fetch data ketika page atau limit berubah
 
   return (
-    <section className="mt-16 w-full">
+    <section className="mt-16 mx-5 md:mx-10 lg:mx-auto lg:w-[984px] xl:w-[1280px] ">
       <div className="rounded-xl overflow-hidden">
         <CryptoTableHeader />
         {loading ? (
