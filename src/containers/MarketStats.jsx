@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from "react";
 import StatsCard from "../components/StatsCard";
 import { getMarketData } from "../services/product.service";
-import { formatNumberSeparatedWithComma, formatNumberToString } from "../utils/formatNumber";
+import {
+  formatNumberSeparatedWithComma,
+  formatNumberToString,
+} from "../utils/formatNumber";
 
 const MarketStats = () => {
   const [marketData, setMarketData] = useState([]); // Gunakan object sebagai initial state
   const [loading, setLoading] = useState(false);
-
-  
 
   useEffect(() => {
     const fetchDataMarket = async () => {
@@ -27,16 +28,13 @@ const MarketStats = () => {
   }, []);
 
   return (
-    <section className="w-[1052px]">
-      <h1 className="text-center text-3xl font-bold">
-        Today's Crypto Market Cap
-      </h1>
-
-      {loading ? (
-        <div className="text-center mt-4">Loading market data...</div>
-      ) : (
-        <>
-          <p className="text-center mt-4 text-black/60">
+    <>
+      <section className="mx-5 mt-5 md:mt-10 md:mx-10 lg:mx-auto lg:mt-16 lg:w-[984px]">
+        <div className="flex flex-col items-center gap-4">
+          <h1 className="font-bold text-2xl md:text-3xl">
+            Today's Crypto Market Cap
+          </h1>
+          <p className="text-center text-black/60">
             The global cryptocurrency market cap today is currently valued at
             approximately ${formatNumberToString(marketData.marketCap)},
             reflecting a {marketData.marketCapChange}% change in the past 24
@@ -44,27 +42,26 @@ const MarketStats = () => {
             last day is around ${formatNumberToString(marketData.volume)}, with
             Bitcoin holding a market dominance of {marketData.btcDominance}%.
           </p>
-
-          <div className="grid grid-cols-3 gap-4 mt-12">
-            <StatsCard
-              title="Market Cap"
-              value={`$${formatNumberSeparatedWithComma(marketData.marketCap)}`}
-              change={marketData.marketCapChange}
-            />
-            <StatsCard
-              title="24h Volume"
-              value={`$${formatNumberSeparatedWithComma(marketData.volume)}`}
-              change={marketData.volumeChange}
-            />
-            <StatsCard
-              title="BTC Dominance"
-              value={`${marketData.btcDominance}%`}
-              change={marketData.btcDominanceChange}
-            />
-          </div>
-        </>
-      )}
-    </section>
+        </div>
+        <div className="mt-8 md:mt-10 grid grid-cols-1 lg:grid-cols-3 gap-4">
+          <StatsCard
+            title="Market Cap"
+            value={`$${formatNumberSeparatedWithComma(marketData.marketCap)}`}
+            change={marketData.marketCapChange}
+          />
+          <StatsCard
+            title="24h Volume"
+            value={`$${formatNumberSeparatedWithComma(marketData.volume)}`}
+            change={marketData.volumeChange}
+          />
+          <StatsCard
+            title="BTC Dominance"
+            value={`${marketData.btcDominance}%`}
+            change={marketData.btcDominanceChange}
+          />
+        </div>
+      </section>
+    </>
   );
 };
 
