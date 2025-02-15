@@ -1,8 +1,6 @@
-# React + Vite
+# Coinnect - Coin Finder
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Coinnect is a platform that provides real-time data on various cryptocurrencies. With Coinnect, users can search and track the latest prices, volume, and market movements of coins, helping make informed investment decisions. Get accurate and reliable cryptocurrency data at Coinnect.
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Built using Vite + React
+- API from Coinstats
