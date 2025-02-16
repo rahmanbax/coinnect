@@ -2,19 +2,15 @@ import React, { useEffect, useRef, memo } from "react";
 
 function TradingViewWidget({ cryptoDetails }) {
   const container = useRef();
-  let symbol = cryptoDetails.symbol;
 
   useEffect(() => {
-    // Pastikan cryptoDetails dan symbol ada sebelum memuat widget
     if (!cryptoDetails || !cryptoDetails.symbol) {
-      return; // Jika data atau symbol tidak ada, hentikan eksekusi
+      return;
     }
 
-
-
-    // Cek apakah skrip sudah ada di dalam DOM
-    if (document.getElementById("tradingview-widget-script")) {
-      return; // Jika skrip sudah ada, keluar dari useEffect
+    // Hapus widget lama sebelum menambahkan widget baru
+    if (container.current) {
+      container.current.innerHTML = ""; // Bersihkan kontainer
     }
 
     const script = document.createElement("script");
@@ -22,10 +18,9 @@ function TradingViewWidget({ cryptoDetails }) {
       "https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js";
     script.type = "text/javascript";
     script.async = true;
-    script.id = "tradingview-widget-script"; // Set ID untuk skrip agar bisa dicek di penggunaan berikutnya
     script.innerHTML = `{
       "autosize": true,
-      "symbol": "${symbol}USDT",
+      "symbol": "${cryptoDetails.symbol === "USDT" ? "USDT" : cryptoDetails.symbol + "USDT"}",
       "interval": "D",
       "timezone": "Etc/UTC",
       "theme": "light",
@@ -38,14 +33,7 @@ function TradingViewWidget({ cryptoDetails }) {
     }`;
 
     container.current.appendChild(script);
-
-    // Cleanup function untuk menghapus skrip saat komponen dibersihkan
-    return () => {
-      if (script) {
-        script.remove();
-      }
-    };
-  }, [cryptoDetails]); 
+  }, [cryptoDetails]); // Render ulang widget setiap kali cryptoDetails berubah
 
   return (
     <div className="tradingview-widget-container" ref={container}>
