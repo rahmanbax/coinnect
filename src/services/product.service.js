@@ -1,11 +1,13 @@
 import axios from "axios";
 
+const API_KEY = import.meta.env.VITE_COINNECT_API_KEY;
+
 export const getCoins = (callback, page = 1) => {
   const adjustedPage = Math.min(page, 50);
   axios
     .get("https://openapiv1.coinstats.app/coins", {
       headers: {
-        "X-API-KEY": "0TP5VglKG9meuQngisyWgPb3wLrQJIcVMHQgKOjV+Ps=",
+        "X-API-KEY": API_KEY  ,
         accept: "application/json",
       },
       params: {
@@ -25,7 +27,7 @@ export const getCoinsDetail = (callback, id) => {
   axios
     .get(`https://openapiv1.coinstats.app/coins/${id}`, {
       headers: {
-        "X-API-KEY": "0TP5VglKG9meuQngisyWgPb3wLrQJIcVMHQgKOjV+Ps=",
+        "X-API-KEY": API_KEY  ,
         accept: "application/json",
       },
     })
@@ -41,7 +43,7 @@ export const getMarketData = (callback) => {
   axios
     .get("https://openapiv1.coinstats.app/markets", {
       headers: {
-        "X-API-KEY": "0TP5VglKG9meuQngisyWgPb3wLrQJIcVMHQgKOjV+Ps=",
+        "X-API-KEY": API_KEY  ,
         accept: "application/json",
       },
     })
@@ -57,7 +59,7 @@ export const getCoinsBySearch = (searchQuery, callback) => {
   axios
     .get(`https://openapiv1.coinstats.app/coins`, {
       headers: {
-        "X-API-KEY": "0TP5VglKG9meuQngisyWgPb3wLrQJIcVMHQgKOjV+Ps=",
+        "X-API-KEY": API_KEY  ,
         accept: "application/json",
       },
       params: {
@@ -81,7 +83,7 @@ export const getCoinsTrend = (callback) => {
   axios
     .get("https://openapiv1.coinstats.app/coins", {
       headers: {
-        "X-API-KEY": "0TP5VglKG9meuQngisyWgPb3wLrQJIcVMHQgKOjV+Ps=",
+        "X-API-KEY": API_KEY  ,
         accept: "application/json",
       },
       params: {
