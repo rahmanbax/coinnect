@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import StatsCard from "../components/StatsCard";
+import StatsCard from "../components/MarketStatsCard";
 import { getMarketData } from "../services/product.service";
 import {
   formatNumberSeparatedWithComma,
