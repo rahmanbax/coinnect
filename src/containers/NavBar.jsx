@@ -1,6 +1,6 @@
 
 import React, { useEffect, useRef, useState } from "react";
-import CoinnectLogo from "../assets/coinnect-combination-logo.png";
+import CoinnectLogo from "../../public/coinnect-combination-logo.png";
 import SearchBar from "../components/SearchBar";
 import { Link } from "react-router-dom";
 import Modal from "../components/Modal";
@@ -33,7 +33,7 @@ const NavBar = () => {
   return (
     <>
       <header className="bg-white py-4">
-        <nav className="flex justify-between items-center mx-5 lg:mx-14">
+        <nav className="flex justify-between items-center mx-5 md:mx-10 lg:mx-14">
           <div className="flex gap-10 items-center">
             <Link to="/">
               <img src={CoinnectLogo} alt="" className="h-6" />

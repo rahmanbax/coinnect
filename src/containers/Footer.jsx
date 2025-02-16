@@ -1,6 +1,5 @@
 import React from "react";
-import coinnect from "../assets/coinnect-combination-logo.png";
-import { FacebookLogo, TiktokLogo, YoutubeLogo } from "@phosphor-icons/react";
+import coinnect from "../../public/coinnect-combination-logo.png";
 import { Link } from "react-router-dom";
 
 const Footer = () => {

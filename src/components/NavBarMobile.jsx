@@ -1,5 +1,5 @@
 import React from "react";
-import coinnect from "../assets/coinnect-pictorial-logo.png";
+import coinnect from "../../public/coinnect-pictorial-logo.png";
 import { GithubLogo, X } from "@phosphor-icons/react";
 import { Link } from "react-router-dom";
 
