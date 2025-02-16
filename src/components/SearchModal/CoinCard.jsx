@@ -3,9 +3,9 @@ import { formatNumberSeparatedWithComma } from "../../utils/formatNumber";
 import PriceChange from "../PriceChange";
 import { Link } from "react-router-dom";
 
-const CoinCard = ({ data }) => {
+const CoinCard = ({ data, onClose }) => {
   return (
-    <Link to={`/markets/${data.id}`}>
+    <Link to={`/markets/${data.id}`} onClick={onClose}>
       <div className="flex justify-between items-center p-3 mt-3 hover:bg-[#f5f5f5] w-full transition ease-out rounded-xl">
         <div className="flex gap-3 items-center">
           <img
