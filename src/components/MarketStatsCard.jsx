@@ -1,7 +1,7 @@
 import { CaretDown, CaretUp } from "@phosphor-icons/react";
 import React from "react";
 
-const StatsCard = (props) => {
+const StatsCard = (props, {}) => {
   const { title, value, change } = props;
   return (
     <div className="p-4 md:p-6 bg-white rounded-xl">
