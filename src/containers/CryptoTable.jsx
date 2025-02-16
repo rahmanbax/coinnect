@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import CryptoTableHeader from "../components/CryptoTableHeader";
-import CryptoTableBody from "../components/CryptoTableBody";
+import CryptoTableHeader from "../components/CryptoTable/CryptoTableHeader";
+import CryptoTableBody from "../components/CryptoTable/CryptoTableBody";
 import Pagination from "../components/Pagination";
 import { getCoins } from "../services/product.service";
 import { useSearchParams } from "react-router-dom";
