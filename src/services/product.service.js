@@ -21,6 +21,22 @@ export const getCoins = (callback, page = 1) => {
     });
 };
 
+export const getCoinsDetail = (callback, id) => {
+  axios
+    .get(`https://openapiv1.coinstats.app/coins/${id}`, {
+      headers: {
+        "X-API-KEY": "0TP5VglKG9meuQngisyWgPb3wLrQJIcVMHQgKOjV+Ps=",
+        accept: "application/json",
+      },
+    })
+    .then((res) => {
+      callback(res.data);
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+};
+
 export const getMarketData = (callback) => {
   axios
     .get("https://openapiv1.coinstats.app/markets", {
