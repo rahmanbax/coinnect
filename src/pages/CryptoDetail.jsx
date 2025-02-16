@@ -9,7 +9,6 @@ import CryptoDetailPrice from "../components/CryptoDetail/CryptoDetailPrice";
 import StatsCard from "../components/CryptoDetail/StatsCard";
 import {
   formatNumber,
-  formatNumberSeparatedWithComma,
 } from "../utils/formatNumber";
 import Footer from "../containers/Footer";
 
@@ -47,18 +46,17 @@ const CryptoDetail = () => {
             />
           )}
         </div>
-
         {cryptoDetails && (
-          <div className="mt-5 grid grid-cols-2 gap-4 xl:grid-cols-4">
+          <div className="mt-5 grid grid-cols-2 gap-2 md:gap-4 xl:grid-cols-4">
             <StatsCard
               title={"Market Cap"}
-              data={`$${formatNumberSeparatedWithComma(
+              data={`$${formatNumber(
                 cryptoDetails?.marketCap
               )}`}
             />
             <StatsCard
               title={"Volume"}
-              data={`$${formatNumberSeparatedWithComma(cryptoDetails?.volume)}`}
+              data={`$${formatNumber(cryptoDetails?.volume)}`}
             />
             <StatsCard
               title={"Total Supply"}
