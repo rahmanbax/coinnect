@@ -1,9 +1,10 @@
+
 import React, { useEffect, useRef, useState } from "react";
 import CoinnectLogo from "../assets/coinnect-combination-logo.png";
 import SearchBar from "../components/SearchBar";
 import { Link } from "react-router-dom";
 import Modal from "../components/Modal";
-import SearchModalLayout from "../components/SearchModal";
+import SearchModalLayout from "../components/SearchModal/SearchModal";
 import { GithubLogo, List } from "@phosphor-icons/react";
 import NavBarMobile from "../components/NavBarMobile";
 
