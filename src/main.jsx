@@ -8,6 +8,7 @@ import SwapPage from "./pages/SwapPage.jsx";
 import PortfolioTracker from "./pages/PortfolioTracker.jsx";
 import NotFoundPage from "./pages/404.jsx";
 import ErrorPage from "./pages/ErrorPage.jsx";
+import CryptoDetail from "./pages/CryptoDetail.jsx";
 
 const router = createBrowserRouter([
   {
@@ -18,6 +19,10 @@ const router = createBrowserRouter([
   {
     path: "/markets",
     element: <MarketsPage />,
+  },
+  {
+    path: "/markets/:id",
+    element: <CryptoDetail />,
   },
   {
     path: "/swap",
