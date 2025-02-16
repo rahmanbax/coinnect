@@ -1,8 +1,8 @@
 // SearchInput.jsx
 import { MagnifyingGlass } from "@phosphor-icons/react";
 import React, { forwardRef, useEffect, useState } from "react";
-import { getCoinsBySearch } from "../services/product.service";
-import useDebounce from "../hooks/useDebounce";
+import { getCoinsBySearch } from "../../services/product.service";
+import useDebounce from "../../hooks/useDebounce";
 
 const SearchInput = forwardRef(
   ({ setSearchResults, setSearchInputGlobal, closeButton }, ref) => {

@@ -2,7 +2,7 @@ import React, { forwardRef, useEffect, useState } from "react";
 import SearchResultsLayout from "./SearchResults";
 import TrendingNowLayout from "./TrendingNow";
 import SearchInput from "./SearchInput";
-import { getCoinsTrend } from "../services/product.service";
+import { getCoinsTrend } from "../../services/product.service";
 import { X } from "@phosphor-icons/react";
 
 const SearchModalLayout = forwardRef(({ searchInputRef, closeButton }, ref) => {
