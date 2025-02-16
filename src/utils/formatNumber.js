@@ -1,3 +1,14 @@
+export function formatNumber(value) {
+  if (value === null || value === undefined) {
+    return "Loading data";
+  } else {
+    return value.toLocaleString("en-US", {
+      minimumFractionDigits: 0,
+      maximumFractionDigits: 0,
+    });
+  }
+}
+
 export function formatNumberSeparatedWithComma(value) {
   if (value === null || value === undefined) {
     return "Loading data";
